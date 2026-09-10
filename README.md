@@ -4,7 +4,7 @@ Dashboard web de **concientización y prevención del suicidio**: estadísticas 
 directorio de líneas de ayuda por país y recursos de prevención. Cada vida es una
 historia que vale la pena continuar.
 
-**En vivo:** https://unimauro.github.io/life-compass/
+**En vivo:** https://unimauro.github.io/sigamos/
 
 ## Qué incluye
 
@@ -50,7 +50,7 @@ sobre el mensaje del usuario **y** sobre la respuesta del modelo.
 
 ```bash
 npm ci
-npm run dev      # http://localhost:8080/life-compass/
+npm run dev      # http://localhost:8080/sigamos/
 npm run build    # genera dist/
 npm run test     # vitest
 ```
@@ -58,7 +58,7 @@ npm run test     # vitest
 ## Deploy
 
 Push a `main` dispara el workflow `.github/workflows/deploy.yml`, que construye y publica
-en **GitHub Pages** (`base: /life-compass/`).
+en **GitHub Pages** (`base: /sigamos/`).
 
 ## Stack
 
