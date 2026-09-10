@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, LabelList } from "recharts";
 import { ShieldAlert, ShieldCheck, Phone } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useCountryHelpline } from "@/hooks/use-country-helpline";
@@ -95,8 +95,12 @@ const SocialMediaImpact = () => {
               <XAxis dataKey="age" tick={{ fontSize: 12 }} stroke="hsl(215, 16%, 47%)" />
               <YAxis tick={{ fontSize: 12 }} stroke="hsl(215, 16%, 47%)" />
               <Tooltip content={<CustomTooltip />} />
-              <Bar dataKey="hours" name={t('social.avgHours')} fill="hsl(217, 91%, 65%)" radius={[6, 6, 0, 0]} />
-              <Bar dataKey="ideation" name={t('social.ideationRate')} fill="hsl(173, 80%, 30%)" radius={[6, 6, 0, 0]} />
+              <Bar dataKey="hours" name={t('social.avgHours')} fill="hsl(217, 91%, 65%)" radius={[6, 6, 0, 0]}>
+                <LabelList dataKey="hours" position="top" style={{ fontSize: 11, fill: "hsl(215, 16%, 47%)" }} />
+              </Bar>
+              <Bar dataKey="ideation" name={t('social.ideationRate')} fill="hsl(173, 80%, 30%)" radius={[6, 6, 0, 0]}>
+                <LabelList dataKey="ideation" position="top" formatter={(v: number) => `${v}%`} style={{ fontSize: 11, fill: "hsl(215, 16%, 47%)" }} />
+              </Bar>
             </BarChart>
           </ResponsiveContainer>
           <ChartSource sources={["twenge2018"]} illustrative note={t('sources.noteExample')} />

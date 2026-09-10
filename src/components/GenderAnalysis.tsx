@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, LineChart, Line } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, LineChart, Line, LabelList } from "recharts";
 import { useTranslation } from "react-i18next";
 import ChartSource from "./ChartSource";
 
@@ -109,8 +109,12 @@ const GenderAnalysis = () => {
                 <YAxis tick={{ fontSize: 12 }} stroke="hsl(215, 16%, 47%)" />
                 <Tooltip content={<CustomTooltip />} />
                 <Legend />
-                <Bar dataKey="male" name={t('gender.male')} fill={COLORS.male} radius={[6, 6, 0, 0]} />
-                <Bar dataKey="female" name={t('gender.female')} fill={COLORS.female} radius={[6, 6, 0, 0]} />
+                <Bar dataKey="male" name={t('gender.male')} fill={COLORS.male} radius={[6, 6, 0, 0]}>
+                  <LabelList dataKey="male" position="top" style={{ fontSize: 10, fill: "hsl(215, 16%, 47%)" }} />
+                </Bar>
+                <Bar dataKey="female" name={t('gender.female')} fill={COLORS.female} radius={[6, 6, 0, 0]}>
+                  <LabelList dataKey="female" position="top" style={{ fontSize: 10, fill: "hsl(215, 16%, 47%)" }} />
+                </Bar>
               </BarChart>
             </ResponsiveContainer>
             <ChartSource sources={["who2021"]} illustrative note={t('sources.noteRegional')} />

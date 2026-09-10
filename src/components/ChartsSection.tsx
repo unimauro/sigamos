@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import {
-  LineChart, Line, BarChart, Bar, PieChart, Pie, Cell,
-  XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend,
+  AreaChart, Area, BarChart, Bar, PieChart, Pie, Cell,
+  XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend, LabelList,
 } from "recharts";
 import { useTranslation } from "react-i18next";
 import ChartSource from "./ChartSource";
@@ -37,6 +37,14 @@ const ageDistribution = [
   { name: "50\u201369", value: 28, color: "hsl(217, 91%, 65%)" },
   { name: "70+", value: 23, color: "hsl(217, 91%, 45%)" },
 ];
+
+// Color por severidad: verde-azulado (más bajo) → ámbar → rojo (más alto).
+const severityColor = (rate: number) => {
+  if (rate >= 40) return "hsl(0, 72%, 51%)";
+  if (rate >= 25) return "hsl(25, 90%, 52%)";
+  if (rate >= 18) return "hsl(38, 92%, 50%)";
+  return "hsl(173, 80%, 38%)";
+};
 
 const ChartsSection = () => {
   const { t } = useTranslation();
@@ -80,13 +88,19 @@ const ChartsSection = () => {
           >
             <h3 className="text-lg font-semibold mb-6">{t('charts.globalTrend')}</h3>
             <ResponsiveContainer width="100%" height={300}>
-              <LineChart data={globalTrend}>
+              <AreaChart data={globalTrend}>
+                <defs>
+                  <linearGradient id="trendFill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="hsl(173, 80%, 38%)" stopOpacity={0.35} />
+                    <stop offset="100%" stopColor="hsl(173, 80%, 38%)" stopOpacity={0} />
+                  </linearGradient>
+                </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke="hsl(214, 32%, 91%)" />
                 <XAxis dataKey="year" tick={{ fontSize: 11 }} stroke="hsl(215, 16%, 47%)" />
                 <YAxis tick={{ fontSize: 11 }} stroke="hsl(215, 16%, 47%)" domain={[8, 16]} />
                 <Tooltip content={<CustomTooltip />} />
-                <Line type="monotone" dataKey="rate" name={t('charts.ratePer100k')} stroke="hsl(173, 80%, 30%)" strokeWidth={3} dot={{ r: 4 }} />
-              </LineChart>
+                <Area type="monotone" dataKey="rate" name={t('charts.ratePer100k')} stroke="hsl(173, 80%, 32%)" strokeWidth={3} fill="url(#trendFill)" dot={{ r: 3 }} activeDot={{ r: 5 }} />
+              </AreaChart>
             </ResponsiveContainer>
             <ChartSource sources={["owid", "who2021"]} note={t('sources.noteAgeStd')} />
           </motion.div>
@@ -105,12 +119,15 @@ const ChartsSection = () => {
                   data={ageDistribution}
                   cx="50%"
                   cy="50%"
-                  innerRadius={60}
-                  outerRadius={110}
+                  innerRadius={55}
+                  outerRadius={105}
                   dataKey="value"
                   nameKey="name"
                   paddingAngle={3}
                   stroke="none"
+                  label={({ name, value }) => `${name}: ${value}%`}
+                  labelLine={false}
+                  style={{ fontSize: 12 }}
                 >
                   {ageDistribution.map((entry) => (
                     <Cell key={entry.name} fill={entry.color} />
@@ -137,7 +154,12 @@ const ChartsSection = () => {
                 <XAxis type="number" tick={{ fontSize: 11 }} stroke="hsl(215, 16%, 47%)" />
                 <YAxis dataKey="country" type="category" width={130} tick={{ fontSize: 11 }} stroke="hsl(215, 16%, 47%)" />
                 <Tooltip content={<CustomTooltip />} />
-                <Bar dataKey="rate" name={t('charts.ratePer100k')} fill="hsl(173, 80%, 35%)" radius={[0, 6, 6, 0]} />
+                <Bar dataKey="rate" name={t('charts.ratePer100k')} radius={[0, 6, 6, 0]}>
+                  {topCountries.map((c) => (
+                    <Cell key={c.country} fill={severityColor(c.rate)} />
+                  ))}
+                  <LabelList dataKey="rate" position="right" style={{ fontSize: 11, fill: "hsl(215, 16%, 47%)" }} />
+                </Bar>
               </BarChart>
             </ResponsiveContainer>
             <ChartSource sources={["who2021", "owid"]} note={t('sources.noteCrude2019')} />

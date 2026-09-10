@@ -187,7 +187,9 @@ const EconomicFactors = () => {
                 <XAxis dataKey="group" tick={{ fontSize: 12 }} stroke="hsl(215, 16%, 47%)" />
                 <YAxis tick={{ fontSize: 12 }} stroke="hsl(215, 16%, 47%)" />
                 <Tooltip content={<CustomTooltip />} />
-                <Bar dataKey="rate" name={t('economic.ratePer100k')} fill="hsl(217, 91%, 65%)" radius={[8, 8, 0, 0]} />
+                <Bar dataKey="rate" name={t('economic.ratePer100k')} fill="hsl(217, 91%, 65%)" radius={[8, 8, 0, 0]}>
+                  <LabelList dataKey="rate" position="top" style={{ fontSize: 12, fill: "hsl(215, 16%, 47%)" }} />
+                </Bar>
               </BarChart>
             </ResponsiveContainer>
             <ChartSource sources={["whoFactsheet"]} illustrative note={t('sources.noteExample')} />
