@@ -152,6 +152,7 @@ const SupportChat = () => {
 
   const lastMessage = messages[messages.length - 1];
   const phoneLink = `tel:${helpline.phone.replace(/\s/g, "")}`;
+  const hasPhone = Boolean(helpline.phone);
 
   return (
     <>
@@ -241,10 +242,17 @@ const SupportChat = () => {
                         </p>
                         <div className="flex flex-wrap gap-2">
                           <Button variant="emergency" size="sm" asChild>
-                            <a href={phoneLink}>
-                              <Phone className="w-4 h-4" />
-                              {helpline.phone}
-                            </a>
+                            {hasPhone ? (
+                              <a href={phoneLink}>
+                                <Phone className="w-4 h-4" />
+                                {helpline.phone}
+                              </a>
+                            ) : (
+                              <a href={helpline.url || "https://findahelpline.com/"} target="_blank" rel="noopener noreferrer">
+                                <Phone className="w-4 h-4" />
+                                {t("emergency.findHelpline")}
+                              </a>
+                            )}
                           </Button>
                           {helpline.whatsapp && (
                             <Button

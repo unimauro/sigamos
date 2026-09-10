@@ -111,7 +111,7 @@ export const NODES: Record<string, ChatNode> = {
   },
 };
 
-// --- Detección de crisis (determinista, ES + EN) --------------------------
+// --- Detección de crisis (determinista, 8 idiomas del sitio) --------------
 
 const normalize = (s: string) =>
   s
@@ -163,11 +163,52 @@ const CRISIS_TERMS = [
   "kms",
   "unalive",
   "kys",
+  // Francés
+  "je veux mourir",
+  "envie de mourir",
+  "me suicider",
+  "suicide",
+  "me tuer",
+  "en finir avec la vie",
+  "plus envie de vivre",
+  "je veux disparaitre",
+  // Ruso
+  "хочу умереть",
+  "покончить с собой",
+  "суицид",
+  "самоубийство",
+  "не хочу жить",
+  "не хочу больше жить",
+  // Chino (simpl./trad.)
+  "想死",
+  "自杀",
+  "自殺",
+  "不想活",
+  "结束生命",
+  "結束生命",
+  // Japonés
+  "死にたい",
+  "自殺",
+  "消えたい",
+  "リストカット",
+  // Coreano
+  "죽고 싶",
+  "죽고싶",
+  "자살",
+  "자해",
+  "사라지고 싶",
+  // Lituano (normalizado sin acentos)
+  "noriu mirti",
+  "nusizudyti",
+  "savizudybe",
+  "nebenoriu gyventi",
 ];
 
 export function isCrisis(text: string): boolean {
   const n = normalize(text);
-  return CRISIS_TERMS.some((term) => n.includes(term));
+  // Normalizamos también cada término: así el mismo NFD que aplicamos al input
+  // se aplica al término y el match funciona en coreano (jamo), ruso (й), etc.
+  return CRISIS_TERMS.some((term) => n.includes(normalize(term)));
 }
 
 // --- Capa IA opcional (gateway ai.tunky.net) ------------------------------

@@ -11,6 +11,7 @@ const HeroSection = () => {
   const { t, i18n } = useTranslation();
   const { helpline } = useCountryHelpline();
   const phoneLink = `tel:${helpline.phone.replace(/\s/g, "")}`;
+  const hasPhone = Boolean(helpline.phone);
 
   const shuffle = useCallback((arr: string[]) => {
     const shuffled = [...arr];
@@ -107,10 +108,17 @@ const HeroSection = () => {
           transition={{ delay: 0.4 }}
         >
           <Button variant="emergency" size="lg" asChild className="text-base px-8 py-6">
-            <a href={phoneLink}>
-              <Phone className="w-5 h-5" />
-              {t('hero.callCrisis')} {helpline.phone}
-            </a>
+            {hasPhone ? (
+              <a href={phoneLink}>
+                <Phone className="w-5 h-5" />
+                {t('hero.callCrisis')} {helpline.phone}
+              </a>
+            ) : (
+              <a href="#helplines">
+                <Phone className="w-5 h-5" />
+                {t('hero.findHelp')}
+              </a>
+            )}
           </Button>
           <Button variant="hopeful" size="lg" asChild className="text-base px-8 py-6">
             <a href="#helplines">

@@ -212,7 +212,8 @@
   "emergency": {
     "messageFull": "\u00bfNecesitas ayuda ahora? No est\u00e1s solo/a. Hay ayuda disponible las 24 horas.",
     "messageShort": "\u00bfNecesitas ayuda?",
-    "call988": "Llamar 988"
+    "call988": "Llamar 988",
+    "findHelpline": "Buscar l\u00ednea de ayuda"
   },
   "footer": {
     "crisisMessage": "Si t\u00fa o alguien que conoces est\u00e1 en crisis, por favor busca ayuda. Hay asistencia disponible las 24 horas.",

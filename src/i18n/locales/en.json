@@ -212,7 +212,8 @@
   "emergency": {
     "messageFull": "Need help now? You are not alone. Help is available 24/7.",
     "messageShort": "Need help now?",
-    "call988": "Call 988"
+    "call988": "Call 988",
+    "findHelpline": "Find a helpline"
   },
   "footer": {
     "crisisMessage": "If you or someone you know is in crisis, please reach out. Help is available 24/7.",
