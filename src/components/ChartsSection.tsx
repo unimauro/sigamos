@@ -3,8 +3,11 @@ import {
   AreaChart, Area, BarChart, Bar, PieChart, Pie, Cell,
   XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend, LabelList,
 } from "recharts";
+import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import ChartSource from "./ChartSource";
+import { useCsv } from "@/lib/csv";
+import { flagFromIso3 } from "@/lib/geo";
 
 const globalTrend = [
   { year: "2000", rate: 14.5 }, { year: "2002", rate: 14.0 }, { year: "2004", rate: 13.5 },
@@ -13,7 +16,8 @@ const globalTrend = [
   { year: "2018", rate: 10.2 }, { year: "2020", rate: 9.8 },
 ];
 
-const topCountries = [
+// Fallback si el CSV no carga (mismos valores OMS 2019).
+const TOP_COUNTRIES_FALLBACK = [
   { country: "🇱🇸 Lesotho", rate: 72.4 },
   { country: "🇬🇾 Guyana", rate: 40.3 },
   { country: "🇸🇿 Eswatini", rate: 29.4 },
@@ -48,6 +52,22 @@ const severityColor = (rate: number) => {
 
 const ChartsSection = () => {
   const { t } = useTranslation();
+
+  // Top-15 desde el CSV real (OMS 2019, tasas crudas); fallback al hardcode.
+  const countryRows = useCsv("data/suicide_rates_by_country.csv");
+  const topCountries = useMemo(() => {
+    if (!countryRows) return TOP_COUNTRIES_FALLBACK;
+    const rows = countryRows
+      .filter((r) => r.year === "2019" && r.rate_total)
+      .map((r) => ({
+        country: `${flagFromIso3(r.country_code)} ${r.country}`,
+        rate: Number(r.rate_total),
+      }))
+      .filter((r) => Number.isFinite(r.rate))
+      .sort((a, b) => b.rate - a.rate)
+      .slice(0, 15);
+    return rows.length ? rows : TOP_COUNTRIES_FALLBACK;
+  }, [countryRows]);
 
   const CustomTooltip = ({ active, payload, label }: any) => {
     if (!active || !payload) return null;
