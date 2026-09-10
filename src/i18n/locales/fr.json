@@ -47,7 +47,7 @@
     "maleToFemale": "Ratio hommes/femmes",
     "maleToFemaleDesc": "Les hommes sont touch\u00e9s de mani\u00e8re disproportionn\u00e9e",
     "mostAffectedAge": "Tranche d'\u00e2ge la plus touch\u00e9e",
-    "mostAffectedAgeDesc": "Deuxi\u00e8me cause de d\u00e9c\u00e8s dans cette tranche",
+    "mostAffectedAgeDesc": "",
     "source": "Source"
   },
   "gender": {

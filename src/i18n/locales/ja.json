@@ -47,7 +47,7 @@
     "maleToFemale": "男女比",
     "maleToFemaleDesc": "男性が不均衡に影響を受けています",
     "mostAffectedAge": "最も影響を受ける年齢層",
-    "mostAffectedAgeDesc": "この年齢層での死因第2位",
+    "mostAffectedAgeDesc": "",
     "source": "出典"
   },
   "gender": {

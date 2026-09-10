@@ -47,7 +47,7 @@
     "maleToFemale": "남녀 비율",
     "maleToFemaleDesc": "남성이 불균형적으로 영향을 받습니다",
     "mostAffectedAge": "가장 영향받는 연령대",
-    "mostAffectedAgeDesc": "이 연령대의 두 번째 사망 원인",
+    "mostAffectedAgeDesc": "",
     "source": "출처"
   },
   "gender": {

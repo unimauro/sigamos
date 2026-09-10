@@ -47,7 +47,7 @@
     "maleToFemale": "Соотношение мужчин/женщин",
     "maleToFemaleDesc": "Мужчины страдают непропорционально",
     "mostAffectedAge": "Наиболее уязвимая возрастная группа",
-    "mostAffectedAgeDesc": "Вторая причина смерти в этом диапазоне",
+    "mostAffectedAgeDesc": "",
     "source": "Источник"
   },
   "gender": {

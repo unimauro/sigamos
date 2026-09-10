@@ -47,7 +47,7 @@
     "maleToFemale": "男女比例",
     "maleToFemaleDesc": "男性受到不成比例的影响",
     "mostAffectedAge": "最受影响的年龄组",
-    "mostAffectedAgeDesc": "该年龄段的第二大死因",
+    "mostAffectedAgeDesc": "",
     "source": "来源"
   },
   "gender": {

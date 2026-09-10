@@ -46,17 +46,11 @@ El `systemPrompt` está en `chat.systemPrompt` (es/en) y restringe al modelo a a
 y derivar hacia ayuda humana real. Aun con IA activa, la detección de crisis se ejecuta
 sobre el mensaje del usuario **y** sobre la respuesta del modelo.
 
-## Analítica (opcional, sin cookies)
+## Analítica
 
-Cableada con **GoatCounter** (`src/lib/analytics.ts`): sin cookies, anónima y sin
-banner de consentimiento — apropiado para un sitio de salud mental. **No usamos
-Google Analytics** a propósito. Se activa solo si defines `VITE_GOATCOUNTER` con la
-URL de conteo de tu sitio (créalo gratis en goatcounter.com); sin esa variable no se
-carga nada.
-
-```bash
-VITE_GOATCOUNTER=https://sigamos.goatcounter.com/count
-```
+**Google Analytics 4** vía el snippet `gtag.js` en `index.html`. El Measurement ID
+(`G-XXXXXXXXXX`) es público, así que va directo en el HTML (funciona en el build de
+GitHub Pages sin configurar variables en el CI).
 
 ## SEO / redes
 

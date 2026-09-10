@@ -48,7 +48,7 @@
     "maleToFemale": "Proporci\u00f3n Hombre/Mujer",
     "maleToFemaleDesc": "Los hombres se ven afectados de forma desproporcionada",
     "mostAffectedAge": "Grupo de Edad M\u00e1s Afectado",
-    "mostAffectedAgeDesc": "Segunda causa de muerte en este rango",
+    "mostAffectedAgeDesc": "",
     "source": "Fuente"
   },
   "gender": {
@@ -237,7 +237,7 @@
     "search": "Buscar..."
   },
   "chat": {
-    "fabLabel": "Hablar",
+    "fabLabel": "Hablemos",
     "title": "Un espacio para hablar",
     "headerSub": "No est\u00e1s solo/a en esto",
     "inputPlaceholder": "Escribe lo que sientes...",

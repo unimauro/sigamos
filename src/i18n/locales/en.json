@@ -48,7 +48,7 @@
     "maleToFemale": "Male to Female Ratio",
     "maleToFemaleDesc": "Men are disproportionately affected",
     "mostAffectedAge": "Most Affected Age Group",
-    "mostAffectedAgeDesc": "Second leading cause of death in this range",
+    "mostAffectedAgeDesc": "",
     "source": "Source"
   },
   "gender": {

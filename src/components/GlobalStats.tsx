@@ -96,7 +96,9 @@ const GlobalStats = () => {
                   decimals={stat.decimals || 0}
                 />
               </h3>
-              <p className="text-muted-foreground text-sm mt-3">{stat.description}</p>
+              {stat.description && (
+                <p className="text-muted-foreground text-sm mt-3">{stat.description}</p>
+              )}
               <p className="text-muted-foreground/60 text-xs mt-4">{t('globalStats.source')}: {stat.source}</p>
             </motion.div>
           ))}
