@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, LineChart, Line, Legend, ScatterChart, Scatter, ZAxis, CartesianGrid } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, LineChart, Line, Legend, ScatterChart, Scatter, ZAxis, CartesianGrid, LabelList } from "recharts";
 import { useTranslation } from "react-i18next";
 import ChartSource from "./ChartSource";
 
@@ -18,17 +18,30 @@ const crisisData = [
 ];
 
 const scatterData = [
-  { gdp: 2000, rate: 15, country: "India", z: 500 },
-  { gdp: 5000, rate: 12, country: "Brazil", z: 300 },
-  { gdp: 10000, rate: 8, country: "Mexico", z: 200 },
-  { gdp: 15000, rate: 18, country: "Russia", z: 400 },
-  { gdp: 25000, rate: 14, country: "Japan", z: 350 },
-  { gdp: 35000, rate: 11, country: "Germany", z: 250 },
-  { gdp: 45000, rate: 12, country: "Australia", z: 200 },
-  { gdp: 65000, rate: 14, country: "USA", z: 450 },
-  { gdp: 8000, rate: 6, country: "Peru", z: 150 },
-  { gdp: 12000, rate: 22, country: "Lithuania", z: 100 },
+  { gdp: 2000, rate: 15, country: "India", flag: "🇮🇳", z: 500 },
+  { gdp: 5000, rate: 12, country: "Brasil", flag: "🇧🇷", z: 300 },
+  { gdp: 8000, rate: 6, country: "Perú", flag: "🇵🇪", z: 150 },
+  { gdp: 10000, rate: 8, country: "México", flag: "🇲🇽", z: 200 },
+  { gdp: 12000, rate: 22, country: "Lituania", flag: "🇱🇹", z: 100 },
+  { gdp: 15000, rate: 18, country: "Rusia", flag: "🇷🇺", z: 400 },
+  { gdp: 25000, rate: 14, country: "Japón", flag: "🇯🇵", z: 350 },
+  { gdp: 35000, rate: 11, country: "Alemania", flag: "🇩🇪", z: 250 },
+  { gdp: 45000, rate: 12, country: "Australia", flag: "🇦🇺", z: 200 },
+  { gdp: 65000, rate: 14, country: "EE.UU.", flag: "🇺🇸", z: 450 },
 ];
+
+// Etiqueta con banderita + país sobre cada punto del scatter.
+const FlagLabel = (props: { x?: number; y?: number; index?: number }) => {
+  const { x, y, index } = props;
+  if (x == null || y == null || index == null) return null;
+  const d = scatterData[index];
+  return (
+    <text x={x} y={y - 12} textAnchor="middle" fontSize={13} fill="hsl(215, 16%, 47%)">
+      <tspan fontSize={15}>{d.flag}</tspan>
+      <tspan dx={3} fontSize={10}>{d.country}</tspan>
+    </text>
+  );
+};
 
 const EconomicFactors = () => {
   const { t } = useTranslation();
@@ -66,7 +79,7 @@ const EconomicFactors = () => {
     const d = payload[0].payload;
     return (
       <div className="bg-card border border-border rounded-xl p-3 shadow-soft text-sm">
-        <p className="font-semibold text-foreground">{d.country}</p>
+        <p className="font-semibold text-foreground">{d.flag} {d.country}</p>
         <p className="text-muted-foreground">{t('economic.gdpCapita')}: ${d.gdp.toLocaleString()}</p>
         <p className="text-primary">{t('economic.rate')}: {d.rate} {t('economic.ratePer100k')}</p>
       </div>
@@ -113,14 +126,25 @@ const EconomicFactors = () => {
             viewport={{ once: true }}
           >
             <h3 className="text-lg font-semibold mb-6">{t('economic.gdpVsRate')}</h3>
-            <ResponsiveContainer width="100%" height={300}>
-              <ScatterChart>
+            <ResponsiveContainer width="100%" height={320}>
+              <ScatterChart margin={{ top: 24, right: 16, bottom: 8, left: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="hsl(214, 32%, 91%)" />
-                <XAxis dataKey="gdp" name="GDP" tick={{ fontSize: 11 }} stroke="hsl(215, 16%, 47%)" tickFormatter={(v) => `$${(v/1000).toFixed(0)}k`} />
-                <YAxis dataKey="rate" name="Rate" tick={{ fontSize: 11 }} stroke="hsl(215, 16%, 47%)" />
-                <ZAxis dataKey="z" range={[40, 200]} />
-                <Tooltip content={<ScatterTooltip />} />
-                <Scatter data={scatterData} fill="hsl(173, 80%, 30%)" fillOpacity={0.7} />
+                <XAxis
+                  type="number"
+                  dataKey="gdp"
+                  name="GDP"
+                  domain={[0, 70000]}
+                  ticks={[0, 10000, 20000, 30000, 40000, 50000, 60000, 70000]}
+                  tick={{ fontSize: 11 }}
+                  stroke="hsl(215, 16%, 47%)"
+                  tickFormatter={(v) => `$${(v / 1000).toFixed(0)}k`}
+                />
+                <YAxis type="number" dataKey="rate" name="Rate" domain={[0, 26]} tick={{ fontSize: 11 }} stroke="hsl(215, 16%, 47%)" />
+                <ZAxis dataKey="z" range={[60, 300]} />
+                <Tooltip content={<ScatterTooltip />} cursor={{ strokeDasharray: "3 3" }} />
+                <Scatter data={scatterData} fill="hsl(173, 80%, 35%)" fillOpacity={0.75}>
+                  <LabelList content={FlagLabel} />
+                </Scatter>
               </ScatterChart>
             </ResponsiveContainer>
             <ChartSource sources={["worldBank", "who2021"]} illustrative note={t('sources.noteExample')} />
