@@ -7,6 +7,18 @@
 
 Owner del backlog: Product Owner. Última actualización: 2026-09-10.
 
+## ✅ Progreso (2026-09-10)
+
+Ya entregado en esta iteración:
+- **H1.5 — Correcciones de datos de la auditoría** (África 10.1→18.4, ratio 2.5→2.3, 727k, 15-29→70+, ciberacoso 46% Pew, pantalla Twenge 2018, se quitó "20-30%").
+- **Fuentes por gráfico + sección Fuentes/FAQ** (`src/data/sources.ts`, `ChartSource`, `SourcesFaq`); series no oficiales marcadas "datos ilustrativos".
+- **H2.1 — Fuente única de líneas de ayuda** (`src/data/helplines.ts`; hook y directorio la consumen).
+- **Fallback internacional** en vez de "988" (solo EE. UU.) → Find A Helpline.
+- **H3.1 — Detección de crisis en los 8 idiomas** (+ tests multilingües).
+- Extras: GA4 con `anonymize_ip`, SEO (canonical/sitemap/JSON-LD), `npm audit` 25→6, WhatsApp roto de Perú retirado, banderas y pulido en gráficos.
+
+Pendientes prioritarios: **H2.2** (metadato `last_verified`/`status` por línea), **H1.1** (conectar los CSV al runtime), accesibilidad de gráficos (alt textual), consentimiento de analítica/ipapi.
+
 ---
 
 ## 1. Visión y métricas de éxito
