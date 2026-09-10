@@ -14,7 +14,7 @@ const helplinesByCountry: Record<string, Helpline> = {
   CA: { country: "Canada", phone: "988", organization: "988 Suicide Crisis Helpline" },
 
   // LATAM
-  PE: { country: "Peru", phone: "113", organization: "Línea 113 - MINSA", whatsapp: "+51964091760" },
+  PE: { country: "Peru", phone: "113", organization: "Línea 113 - MINSA" },
   MX: { country: "Mexico", phone: "800-290-0024", organization: "SAPTEL" },
   AR: { country: "Argentina", phone: "135", organization: "Centro de Asistencia al Suicida", whatsapp: "+5491152751135" },
   CL: { country: "Chile", phone: "*4141", organization: "Línea Libre" },

@@ -1,7 +1,7 @@
 country,country_code,region,phone,organization,hours,languages,flag_emoji,whatsapp,telegram
 United States,US,North America,988,988 Suicide & Crisis Lifeline,24/7,"English, Spanish",🇺🇸,,
 Canada,CA,North America,988,988 Suicide Crisis Helpline,24/7,"English, French",🇨🇦,,
-Peru,PE,LATAM,113,Línea 113 (MINSA),24/7,"Spanish, Quechua",🇵🇪,+51964091760,
+Peru,PE,LATAM,113,Línea 113 (MINSA),24/7,"Spanish, Quechua",🇵🇪,,
 Mexico,MX,LATAM,800-290-0024,SAPTEL,24/7,Spanish,🇲🇽,,
 Mexico,MX,LATAM,800-911-2000,Línea de la Vida,24/7,Spanish,🇲🇽,,
 Argentina,AR,LATAM,135,Centro de Asistencia al Suicida,24/7,Spanish,🇦🇷,+5491152751135,

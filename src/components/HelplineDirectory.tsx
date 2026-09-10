@@ -21,7 +21,7 @@ const helplines: HelplineEntry[] = [
   { country: "Canada", flag: "\ud83c\udde8\ud83c\udde6", number: "988", org: "988 Suicide Crisis Helpline", hours: "24/7", region: "North America" },
 
   // LATAM
-  { country: "Peru", flag: "\ud83c\uddf5\ud83c\uddea", number: "113", org: "L\u00ednea 113 (MINSA)", hours: "24/7", region: "LATAM", whatsapp: "+51964091760" },
+  { country: "Peru", flag: "\ud83c\uddf5\ud83c\uddea", number: "113", org: "L\u00ednea 113 (MINSA)", hours: "24/7", region: "LATAM" },
   { country: "Mexico", flag: "\ud83c\uddf2\ud83c\uddfd", number: "800-290-0024", org: "SAPTEL", hours: "24/7", region: "LATAM" },
   { country: "Mexico", flag: "\ud83c\uddf2\ud83c\uddfd", number: "800-911-2000", org: "L\u00ednea de la Vida", hours: "24/7", region: "LATAM" },
   { country: "Argentina", flag: "\ud83c\udde6\ud83c\uddf7", number: "135", org: "Centro de Asistencia al Suicida", hours: "24/7", region: "LATAM", whatsapp: "+5491152751135" },
