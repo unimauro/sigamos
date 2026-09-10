@@ -1,4 +1,4 @@
-// Motor de conversación del chat de acompañamiento de Life Compass.
+// Motor de conversación del chat de acompañamiento de Sigamos.
 //
 // Filosofía (heredada de la lógica de crisis del proyecto Suyay):
 //  - Este chat NO es un profesional ni reemplaza a una persona. Su propósito es

@@ -1,4 +1,4 @@
-# Life Compass — Estamos contigo 🧭
+# Sigamos — Estamos contigo 🧭
 
 Dashboard web de **concientización y prevención del suicidio**: estadísticas globales,
 directorio de líneas de ayuda por país y recursos de prevención. Cada vida es una
@@ -45,6 +45,23 @@ El gateway protege el token con allowlist de Origin (incluye `unimauro.github.io
 El `systemPrompt` está en `chat.systemPrompt` (es/en) y restringe al modelo a acompañar
 y derivar hacia ayuda humana real. Aun con IA activa, la detección de crisis se ejecuta
 sobre el mensaje del usuario **y** sobre la respuesta del modelo.
+
+## Analítica (opcional, sin cookies)
+
+Cableada con **GoatCounter** (`src/lib/analytics.ts`): sin cookies, anónima y sin
+banner de consentimiento — apropiado para un sitio de salud mental. **No usamos
+Google Analytics** a propósito. Se activa solo si defines `VITE_GOATCOUNTER` con la
+URL de conteo de tu sitio (créalo gratis en goatcounter.com); sin esa variable no se
+carga nada.
+
+```bash
+VITE_GOATCOUNTER=https://sigamos.goatcounter.com/count
+```
+
+## SEO / redes
+
+Open Graph + Twitter Card completos en `index.html` (título, descripción, `og:image`
+= `public/og-image.jpg`, `og:url` = https://unimauro.github.io/sigamos/, `og:locale`).
 
 ## Desarrollo
 
