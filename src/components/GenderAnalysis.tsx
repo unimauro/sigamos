@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, LineChart, Line } from "recharts";
 import { useTranslation } from "react-i18next";
+import ChartSource from "./ChartSource";
 
 const COLORS = {
   male: "hsl(217, 91%, 65%)",
@@ -15,7 +16,7 @@ const GenderAnalysis = () => {
     { region: t('gender.regionEurope'), male: 20.1, female: 5.4 },
     { region: t('gender.regionSEAsia'), male: 12.4, female: 8.1 },
     { region: t('gender.regionWPacific'), male: 12.8, female: 6.2 },
-    { region: t('gender.regionAfrica'), male: 10.1, female: 5.8 },
+    { region: t('gender.regionAfrica'), male: 18.4, female: 5.8 },
     { region: t('gender.regionEMed'), male: 5.6, female: 2.9 },
   ];
 
@@ -112,6 +113,7 @@ const GenderAnalysis = () => {
                 <Bar dataKey="female" name={t('gender.female')} fill={COLORS.female} radius={[6, 6, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
+            <ChartSource sources={["who2021"]} illustrative note={t('sources.noteRegional')} />
           </motion.div>
 
           {/* Line Chart: Historical Trend */}
@@ -132,6 +134,7 @@ const GenderAnalysis = () => {
                 <Line type="monotone" dataKey="female" name={t('gender.female')} stroke={COLORS.female} strokeWidth={3} dot={{ r: 4 }} />
               </LineChart>
             </ResponsiveContainer>
+            <ChartSource sources={["who2021", "owid"]} illustrative note={t('sources.noteEstimate')} />
           </motion.div>
         </div>
 

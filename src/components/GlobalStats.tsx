@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Globe, Users, TrendingDown, Activity } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import AnimatedCounter from "./AnimatedCounter";
+import { SOURCES, type SourceKey } from "@/data/sources";
 
 const container = {
   hidden: {},
@@ -16,14 +17,23 @@ const item = {
 const GlobalStats = () => {
   const { t } = useTranslation();
 
-  const stats = [
+  const stats: {
+    icon: typeof Globe;
+    label: string;
+    value: number;
+    suffix?: string;
+    prefix?: string;
+    decimals?: number;
+    description?: string;
+    sourceKey: SourceKey;
+  }[] = [
     {
       icon: Globe,
       label: t('globalStats.annualDeaths'),
-      value: 700000,
+      value: 727000,
       suffix: "+",
       description: t('globalStats.annualDeathsDesc'),
-      source: "WHO, 2023",
+      sourceKey: "who2021",
     },
     {
       icon: Activity,
@@ -32,25 +42,25 @@ const GlobalStats = () => {
       suffix: "",
       decimals: 1,
       description: t('globalStats.ratePer100kDesc'),
-      source: "WHO GHO",
+      sourceKey: "who2021",
     },
     {
       icon: Users,
       label: t('globalStats.maleToFemale'),
-      value: 2.5,
+      value: 2.3,
       suffix: "x",
       prefix: "~",
       decimals: 1,
       description: t('globalStats.maleToFemaleDesc'),
-      source: "WHO, 2023",
+      sourceKey: "who2021",
     },
     {
       icon: TrendingDown,
       label: t('globalStats.mostAffectedAge'),
-      value: 15,
-      suffix: "\u201329",
+      value: 70,
+      suffix: "+",
       description: t('globalStats.mostAffectedAgeDesc'),
-      source: "WHO, 2023",
+      sourceKey: "gbd2021",
     },
   ];
 
@@ -99,7 +109,17 @@ const GlobalStats = () => {
               {stat.description && (
                 <p className="text-muted-foreground text-sm mt-3">{stat.description}</p>
               )}
-              <p className="text-muted-foreground/60 text-xs mt-4">{t('globalStats.source')}: {stat.source}</p>
+              <p className="text-muted-foreground/60 text-xs mt-4">
+                {t('globalStats.source')}:{" "}
+                <a
+                  href={SOURCES[stat.sourceKey].url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-2 hover:text-primary"
+                >
+                  {SOURCES[stat.sourceKey].label}
+                </a>
+              </p>
             </motion.div>
           ))}
         </motion.div>

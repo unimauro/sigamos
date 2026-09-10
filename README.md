@@ -46,16 +46,41 @@ El `systemPrompt` está en `chat.systemPrompt` (es/en) y restringe al modelo a a
 y derivar hacia ayuda humana real. Aun con IA activa, la detección de crisis se ejecuta
 sobre el mensaje del usuario **y** sobre la respuesta del modelo.
 
+## Integridad de datos y fuentes
+
+Regla dura del proyecto: **no inventar cifras; todo dato debe ser trazable.**
+
+- Registro central de fuentes en `src/data/sources.ts`; cada gráfico muestra su fuente
+  con enlace mediante `src/components/ChartSource.tsx`, y la sección **Fuentes y FAQ**
+  (`src/components/SourcesFaq.tsx`) las consolida.
+- Las series que no corresponden a una tabla oficial verificable se marcan como
+  **"datos ilustrativos"** en la propia UI (nunca se presentan como cifras oficiales).
+- Fuentes principales: **OMS** (*Suicide worldwide in 2021*; tasas por país 2019, crudas),
+  **GBD 2021** (The Lancet) y **Banco Mundial** (PIB, desempleo).
+- Una auditoría con agentes adversariales verificó las cifras contra estas fuentes y
+  aplicó correcciones (p. ej. África masculino 10.1→18.4, ratio H/M 2.5→2.3,
+  ciberacoso "1 de 5"→46% Pew 2022). Los CSV de `public/data/` son trazables pero hoy
+  no se leen en runtime (pendiente en el backlog).
+
 ## Analítica
 
-**Google Analytics 4** vía el snippet `gtag.js` en `index.html`. El Measurement ID
-(`G-XXXXXXXXXX`) es público, así que va directo en el HTML (funciona en el build de
-GitHub Pages sin configurar variables en el CI).
+**Google Analytics 4** (`gtag.js` en `index.html`, ID `G-2PEP1EE6FE`) con
+`anonymize_ip: true`. El Measurement ID es público, así que va directo en el HTML
+(funciona en el build de GitHub Pages sin variables en el CI).
 
 ## SEO / redes
 
-Open Graph + Twitter Card completos en `index.html` (título, descripción, `og:image`
-= `public/og-image.jpg`, `og:url` = https://unimauro.github.io/sigamos/, `og:locale`).
+- Open Graph + Twitter Card completos en `index.html` (`og:image` = `public/og-image.jpg`).
+- `link rel="canonical"`, `sitemap.xml` (referenciado en `robots.txt`) y **JSON-LD**
+  (`WebSite`, `MedicalWebPage`, `FAQPage`).
+
+## Seguridad y backlog
+
+- Revisión de seguridad adversarial: **`docs/SECURITY-REVIEW.md`** (sin XSS explotable;
+  pendientes: fallback de línea de crisis fuera de EE. UU., `npm audit fix`, endurecer
+  el token del gateway).
+- Backlog de producto (Product Owner): **`docs/BACKLOG.md`** (épicas, historias con
+  criterios de aceptación y Top 15 priorizado).
 
 ## Desarrollo
 

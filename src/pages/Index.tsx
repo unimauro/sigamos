@@ -7,6 +7,7 @@ import AgeGroupDeepDive from "@/components/AgeGroupDeepDive";
 import ChartsSection from "@/components/ChartsSection";
 import HelplineDirectory from "@/components/HelplineDirectory";
 import PreventionResources from "@/components/PreventionResources";
+import SourcesFaq from "@/components/SourcesFaq";
 import DashboardFooter from "@/components/DashboardFooter";
 import EmergencyBar from "@/components/EmergencyBar";
 import CoffeeButton from "@/components/CoffeeButton";
@@ -24,6 +25,7 @@ const Index = () => {
       <ChartsSection />
       <HelplineDirectory />
       <PreventionResources />
+      <SourcesFaq />
       <DashboardFooter />
       <EmergencyBar />
       <CoffeeButton />

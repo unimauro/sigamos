@@ -3,6 +3,7 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGri
 import { ShieldAlert, ShieldCheck, Phone } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useCountryHelpline } from "@/hooks/use-country-helpline";
+import ChartSource from "./ChartSource";
 
 const usageData = [
   { age: "13\u201317", hours: 4.8, ideation: 18 },
@@ -76,6 +77,9 @@ const SocialMediaImpact = () => {
             </motion.div>
           ))}
         </div>
+        <div className="mb-12 -mt-8">
+          <ChartSource sources={["twenge2018", "pew2022", "harris2024"]} />
+        </div>
 
         {/* Chart */}
         <motion.div
@@ -95,6 +99,7 @@ const SocialMediaImpact = () => {
               <Bar dataKey="ideation" name={t('social.ideationRate')} fill="hsl(173, 80%, 30%)" radius={[6, 6, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
+          <ChartSource sources={["twenge2018"]} illustrative note={t('sources.noteExample')} />
         </motion.div>
 
         {/* Dual perspective */}

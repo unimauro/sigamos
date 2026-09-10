@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend } from "recharts";
 import { useTranslation } from "react-i18next";
+import ChartSource from "./ChartSource";
 
 const trendData = [
   { year: "2000", "10\u201319": 3.2, "20\u201329": 12.4, "30\u201349": 15.1, "50\u201369": 18.3, "70+": 22.1 },
@@ -106,6 +107,7 @@ const AgeGroupDeepDive = () => {
               ))}
             </AreaChart>
           </ResponsiveContainer>
+          <ChartSource sources={["gbd2021", "who2021"]} illustrative note={t('sources.noteAgeBuckets')} />
         </motion.div>
 
         {/* Age Group Cards */}

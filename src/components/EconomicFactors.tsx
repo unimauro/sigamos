@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, LineChart, Line, Legend, ScatterChart, Scatter, ZAxis, CartesianGrid } from "recharts";
 import { useTranslation } from "react-i18next";
+import ChartSource from "./ChartSource";
 
 const crisisData = [
   { year: "2005", unemployment: 5.1, suicideRate: 11.2 },
@@ -122,6 +123,7 @@ const EconomicFactors = () => {
                 <Scatter data={scatterData} fill="hsl(173, 80%, 30%)" fillOpacity={0.7} />
               </ScatterChart>
             </ResponsiveContainer>
+            <ChartSource sources={["worldBank", "who2021"]} illustrative note={t('sources.noteExample')} />
           </motion.div>
 
           {/* Line: Unemployment vs Suicide */}
@@ -144,6 +146,7 @@ const EconomicFactors = () => {
                 <Line yAxisId="right" type="monotone" dataKey="suicideRate" name={t('economic.suicideRate')} stroke="hsl(173, 80%, 30%)" strokeWidth={2} dot={{ r: 3 }} />
               </LineChart>
             </ResponsiveContainer>
+            <ChartSource sources={["worldBank", "unemployment2013"]} illustrative note={t('sources.noteExample')} />
           </motion.div>
 
           {/* Bar: By Income Level */}
@@ -163,6 +166,7 @@ const EconomicFactors = () => {
                 <Bar dataKey="rate" name={t('economic.ratePer100k')} fill="hsl(217, 91%, 65%)" radius={[8, 8, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
+            <ChartSource sources={["whoFactsheet"]} illustrative note={t('sources.noteExample')} />
           </motion.div>
         </div>
       </div>

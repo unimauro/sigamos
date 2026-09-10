@@ -8,6 +8,8 @@
     <meta name="description" content="Creando conciencia a través de datos. Estadísticas globales de suicidio, directorio de líneas de ayuda y recursos de prevención. Cada vida es una historia que vale la pena continuar." />
     <meta name="author" content="Carlos Mauro Cardenas (@unimauro)" />
     <meta name="keywords" content="prevención del suicidio, salud mental, líneas de ayuda, estadísticas OMS, apoyo en crisis, suicide prevention" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://unimauro.github.io/sigamos/" />
 
     <link rel="icon" type="image/png" href="/sigamos/favicon-32.png" sizes="32x32" />
     <link rel="icon" type="image/svg+xml" href="/sigamos/favicon.svg" />
@@ -35,7 +37,48 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-2PEP1EE6FE');
+      gtag('config', 'G-2PEP1EE6FE', { anonymize_ip: true });
+    </script>
+
+    <!-- Datos estructurados (SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://unimauro.github.io/sigamos/#website",
+          "url": "https://unimauro.github.io/sigamos/",
+          "name": "Sigamos",
+          "description": "Concientización y prevención del suicidio a través de datos, con directorio de líneas de ayuda por país y recursos de prevención.",
+          "inLanguage": ["es", "en", "fr", "ja", "ko", "ru", "zh", "lt"],
+          "author": { "@type": "Person", "name": "Carlos Mauro Cárdenas", "url": "https://github.com/unimauro" }
+        },
+        {
+          "@type": "MedicalWebPage",
+          "name": "Sigamos — Prevención del suicidio",
+          "url": "https://unimauro.github.io/sigamos/",
+          "about": { "@type": "MedicalCondition", "name": "Suicidio / salud mental" },
+          "audience": { "@type": "Patient" },
+          "lastReviewed": "2026-09-10"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿De dónde salen las cifras?",
+              "acceptedAnswer": { "@type": "Answer", "text": "De fuentes públicas y trazables: la OMS (Suicide worldwide in 2021, y tasas por país de 2019), el estudio Global Burden of Disease (GBD 2021) y el Banco Mundial para PIB y desempleo. Cada gráfico enlaza su fuente." }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Este sitio reemplaza la ayuda de un profesional?",
+              "acceptedAnswer": { "@type": "Answer", "text": "No. Sigamos es un espacio de concientización y un puente hacia la ayuda. Si tú o alguien que conoces está en riesgo, contacta la línea de ayuda de tu país o los servicios de emergencia." }
+            }
+          ]
+        }
+      ]
+    }
     </script>
   </head>
 

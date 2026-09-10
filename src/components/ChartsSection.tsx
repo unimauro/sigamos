@@ -4,6 +4,7 @@ import {
   XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend,
 } from "recharts";
 import { useTranslation } from "react-i18next";
+import ChartSource from "./ChartSource";
 
 const globalTrend = [
   { year: "2000", rate: 14.5 }, { year: "2002", rate: 14.0 }, { year: "2004", rate: 13.5 },
@@ -87,6 +88,7 @@ const ChartsSection = () => {
                 <Line type="monotone" dataKey="rate" name={t('charts.ratePer100k')} stroke="hsl(173, 80%, 30%)" strokeWidth={3} dot={{ r: 4 }} />
               </LineChart>
             </ResponsiveContainer>
+            <ChartSource sources={["owid", "who2021"]} note={t('sources.noteAgeStd')} />
           </motion.div>
 
           {/* Age Distribution */}
@@ -118,6 +120,7 @@ const ChartsSection = () => {
                 <Legend />
               </PieChart>
             </ResponsiveContainer>
+            <ChartSource sources={["gbd2021"]} illustrative note={t('sources.noteExample')} />
           </motion.div>
 
           {/* Top Countries */}
@@ -137,6 +140,7 @@ const ChartsSection = () => {
                 <Bar dataKey="rate" name={t('charts.ratePer100k')} fill="hsl(173, 80%, 35%)" radius={[0, 6, 6, 0]} />
               </BarChart>
             </ResponsiveContainer>
+            <ChartSource sources={["who2021", "owid"]} note={t('sources.noteCrude2019')} />
           </motion.div>
         </div>
       </div>

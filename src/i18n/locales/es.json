@@ -82,7 +82,7 @@
   "economic": {
     "title": "Factores Econ\u00f3micos",
     "subtitle": "La estabilidad econ\u00f3mica juega un papel cr\u00edtico en los resultados de salud mental.",
-    "insight1": "Las crisis econ\u00f3micas aumentan el riesgo de suicidio en un 20\u201330%",
+    "insight1": "Las crisis econ\u00f3micas y el desempleo se asocian con un mayor riesgo de suicidio, sobre todo en hombres",
     "insight2": "La p\u00e9rdida de empleo es un factor de riesgo principal, especialmente en hombres de 40\u201360",
     "insight3": "La pobreza y la deuda son factores contribuyentes significativos",
     "insight4": "Los pa\u00edses con redes de seguridad social m\u00e1s fuertes muestran tasas m\u00e1s bajas",
@@ -102,10 +102,10 @@
   "social": {
     "title": "Redes Sociales e Impacto Digital",
     "subtitle": "El mundo digital crea tanto riesgos como oportunidades para la salud mental.",
-    "stat1Value": "66%",
-    "stat1Text": "mayor riesgo en adolescentes con >5hrs/d\u00eda de pantalla",
-    "stat2Value": "1 de 5",
-    "stat2Text": "adolescentes reportan experiencias de ciberacoso",
+    "stat1Value": "\u22482\u00d7",
+    "stat1Text": "m\u00e1s conducta suicida en adolescentes con \u22655 h/d\u00eda de pantalla frente a <1 h (Twenge, 2018)",
+    "stat2Value": "46%",
+    "stat2Text": "de adolescentes en EE.UU. ha sufrido ciberacoso (Pew, 2022)",
     "stat3Value": "40%",
     "stat3Text": "de la Gen Z dice que las redes sociales afectan negativamente su salud mental",
     "chartTitle": "Tiempo de Pantalla vs Ideaci\u00f3n Suicida por Edad",
@@ -280,5 +280,30 @@
       "message": "Lo que me compartes importa, y no deber\u00edas sostenerlo solo/a. Ahora mismo hay personas preparadas para escucharte, gratis y en confianza. Por favor, da este paso:",
       "stay": "Si sientes que est\u00e1s en peligro inmediato, llama tambi\u00e9n al n\u00famero de emergencias de tu pa\u00eds."
     }
+  },
+  "sources": {
+    "label": "Fuente",
+    "illustrative": "Datos ilustrativos",
+    "noteRegional": "patr\u00f3n por regi\u00f3n; valores aproximados",
+    "noteEstimate": "serie estimada / interpolada",
+    "noteExample": "ejemplo esquem\u00e1tico, no dato oficial",
+    "noteAgeBuckets": "reagrupaci\u00f3n propia; la OMS publica 15\u201329, no 10\u201319/20\u201329",
+    "noteAgeStd": "tasa ajustada por edad",
+    "noteCrude2019": "OMS 2019, tasas crudas",
+    "sectionBadge": "Transparencia",
+    "sectionTitle": "Fuentes y preguntas frecuentes",
+    "sectionSubtitle": "De d\u00f3nde salen los datos de este sitio y c\u00f3mo interpretarlos.",
+    "referencesTitle": "Referencias",
+    "disclaimer": "Las cifras cabecera y los rankings por pa\u00eds provienen de la OMS y el Banco Mundial. Algunas series se muestran como \u00abdatos ilustrativos\u00bb cuando no corresponden a una tabla oficial verificable; nunca las presentamos como cifras exactas oficiales. Regla del proyecto: no inventar cifras."
+  },
+  "faq": {
+    "q1": "\u00bfDe d\u00f3nde salen las cifras?",
+    "a1": "De fuentes p\u00fablicas y trazables: la OMS (Suicide worldwide in 2021, y tasas por pa\u00eds de 2019), el estudio Global Burden of Disease (GBD 2021) y el Banco Mundial para PIB y desempleo. Cada gr\u00e1fico enlaza su fuente debajo, y todas est\u00e1n listadas en Referencias.",
+    "q2": "\u00bfPor qu\u00e9 algunos gr\u00e1ficos dicen \u00abdatos ilustrativos\u00bb?",
+    "a2": "Porque muestran la direcci\u00f3n o el patr\u00f3n de un fen\u00f3meno real, pero sus valores exactos no corresponden a una tabla oficial a\u00f1o por a\u00f1o (son estimaciones o reagrupaciones). Lo marcamos con honestidad en vez de presentarlos como cifras oficiales.",
+    "q3": "\u00bfCada cu\u00e1nto se actualizan?",
+    "a3": "La OMS publica estas estimaciones cada pocos a\u00f1os; la m\u00e1s reciente es de 2021 (publicada en 2025). Revisamos las cifras cuando aparece una nueva edici\u00f3n oficial.",
+    "q4": "\u00bfEste sitio reemplaza la ayuda de un profesional?",
+    "a4": "No. Sigamos es un espacio de concientizaci\u00f3n y un puente hacia la ayuda. Si t\u00fa o alguien que conoces est\u00e1 en riesgo, contacta la l\u00ednea de ayuda de tu pa\u00eds o los servicios de emergencia; y sobre todo, habla con una persona de confianza."
   }
 }

@@ -82,7 +82,7 @@
   "economic": {
     "title": "Economic Factors",
     "subtitle": "Economic stability plays a critical role in mental health outcomes.",
-    "insight1": "Economic crises increase suicide risk by 20\u201330%",
+    "insight1": "Economic crises and unemployment are associated with higher suicide risk, especially in men",
     "insight2": "Job loss is a leading risk factor, especially in men 40\u201360",
     "insight3": "Poverty and debt are significant contributing factors",
     "insight4": "Countries with stronger social safety nets show lower rates",
@@ -102,10 +102,10 @@
   "social": {
     "title": "Social Media & Digital Impact",
     "subtitle": "The digital world creates both risks and opportunities for mental health.",
-    "stat1Value": "66%",
-    "stat1Text": "higher risk in teens with >5hrs/day screen time",
-    "stat2Value": "1 in 5",
-    "stat2Text": "teens report cyberbullying experiences",
+    "stat1Value": "≈2×",
+    "stat1Text": "more suicide-related behavior in teens with ≥5 hrs/day screen time vs <1 hr (Twenge, 2018)",
+    "stat2Value": "46%",
+    "stat2Text": "of U.S. teens have experienced cyberbullying (Pew, 2022)",
     "stat3Value": "40%",
     "stat3Text": "of Gen Z say social media negatively affects mental health",
     "chartTitle": "Screen Time vs Suicide Ideation by Age",
@@ -280,5 +280,30 @@
       "message": "What you're sharing matters, and you shouldn't carry it alone. Right now there are people ready to listen to you, free and in confidence. Please, take this step:",
       "stay": "If you feel you are in immediate danger, also call your country's emergency number."
     }
+  },
+  "sources": {
+    "label": "Source",
+    "illustrative": "Illustrative data",
+    "noteRegional": "regional pattern; approximate values",
+    "noteEstimate": "estimated / interpolated series",
+    "noteExample": "schematic example, not official data",
+    "noteAgeBuckets": "our own regrouping; WHO reports 15–29, not 10–19/20–29",
+    "noteAgeStd": "age-standardized rate",
+    "noteCrude2019": "WHO 2019, crude rates",
+    "sectionBadge": "Transparency",
+    "sectionTitle": "Sources & frequently asked questions",
+    "sectionSubtitle": "Where this site's data comes from and how to read it.",
+    "referencesTitle": "References",
+    "disclaimer": "Headline figures and country rankings come from the WHO and the World Bank. Some series are shown as \"illustrative data\" when they do not match a verifiable official table; we never present them as exact official figures. Project rule: never invent numbers."
+  },
+  "faq": {
+    "q1": "Where do the numbers come from?",
+    "a1": "From public, traceable sources: the WHO (Suicide worldwide in 2021, and 2019 country rates), the Global Burden of Disease study (GBD 2021), and the World Bank for GDP and unemployment. Each chart links its source below, and all are listed under References.",
+    "q2": "Why do some charts say \"illustrative data\"?",
+    "a2": "Because they show the direction or pattern of a real phenomenon, but their exact values don't match an official year-by-year table (they are estimates or regroupings). We flag this honestly instead of presenting them as official figures.",
+    "q3": "How often is it updated?",
+    "a3": "The WHO publishes these estimates every few years; the most recent is 2021 (published in 2025). We review the figures when a new official edition appears.",
+    "q4": "Does this site replace professional help?",
+    "a4": "No. Sigamos is a space for awareness and a bridge to help. If you or someone you know is at risk, contact your country's helpline or emergency services; and above all, talk to someone you trust."
   }
 }
