@@ -88,7 +88,7 @@ const ChartsSection = () => {
           >
             <h3 className="text-lg font-semibold mb-6">{t('charts.globalTrend')}</h3>
             <ResponsiveContainer width="100%" height={300}>
-              <AreaChart data={globalTrend}>
+              <AreaChart data={globalTrend} accessibilityLayer>
                 <defs>
                   <linearGradient id="trendFill" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stopColor="hsl(173, 80%, 38%)" stopOpacity={0.35} />
@@ -108,6 +108,8 @@ const ChartsSection = () => {
           {/* Age Distribution */}
           <motion.div
             className="p-8 rounded-2xl bg-card border border-border shadow-soft"
+            role="img"
+            aria-label={t('charts.distributionByAge')}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -149,7 +151,7 @@ const ChartsSection = () => {
           >
             <h3 className="text-lg font-semibold mb-6">{t('charts.top15Countries')}</h3>
             <ResponsiveContainer width="100%" height={400}>
-              <BarChart data={topCountries} layout="vertical">
+              <BarChart data={topCountries} layout="vertical" accessibilityLayer>
                 <CartesianGrid strokeDasharray="3 3" stroke="hsl(214, 32%, 91%)" horizontal={false} />
                 <XAxis type="number" tick={{ fontSize: 11 }} stroke="hsl(215, 16%, 47%)" />
                 <YAxis dataKey="country" type="category" width={130} tick={{ fontSize: 11 }} stroke="hsl(215, 16%, 47%)" />

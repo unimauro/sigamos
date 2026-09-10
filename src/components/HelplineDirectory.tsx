@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Phone, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
-import { HELPLINES as helplines } from "@/data/helplines";
+import { HELPLINES as helplines, HELPLINES_LAST_REVIEWED } from "@/data/helplines";
 
 const WhatsAppIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
@@ -51,6 +51,9 @@ const HelplineDirectory = () => {
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">{t('helplines.title')}</h2>
           <p className="text-muted-foreground mt-3 text-lg max-w-xl mx-auto">
             {t('helplines.subtitle')}
+          </p>
+          <p className="text-xs text-muted-foreground/70 mt-3">
+            {t('helplines.lastReviewed', { date: HELPLINES_LAST_REVIEWED })} · {t('helplines.reportBroken')}
           </p>
         </motion.div>
 

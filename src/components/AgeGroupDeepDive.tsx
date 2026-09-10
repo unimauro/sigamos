@@ -88,7 +88,7 @@ const AgeGroupDeepDive = () => {
         >
           <h3 className="text-lg font-semibold mb-6">{t('ageGroups.chartTitle')}</h3>
           <ResponsiveContainer width="100%" height={350}>
-            <AreaChart data={trendData}>
+            <AreaChart data={trendData} accessibilityLayer>
               <CartesianGrid strokeDasharray="3 3" stroke="hsl(214, 32%, 91%)" />
               <XAxis dataKey="year" tick={{ fontSize: 12 }} stroke="hsl(215, 16%, 47%)" />
               <YAxis tick={{ fontSize: 12 }} stroke="hsl(215, 16%, 47%)" />

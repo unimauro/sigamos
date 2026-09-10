@@ -5,6 +5,9 @@
 // Cada país puede tener varias líneas; para las CTA de crisis (barra de
 // emergencia, chat, hero) se usa la PRIMERA entrada con `code` de ese país.
 
+// Fecha de última revisión del directorio (verificación de números).
+export const HELPLINES_LAST_REVIEWED = "2026-09";
+
 export interface Helpline {
   country: string;
   /** ISO 3166-1 alpha-2. Se usa para la autodetección por IP. */

@@ -90,7 +90,7 @@ const SocialMediaImpact = () => {
         >
           <h3 className="text-lg font-semibold mb-6">{t('social.chartTitle')}</h3>
           <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={usageData} barGap={4}>
+            <BarChart data={usageData} barGap={4} accessibilityLayer>
               <CartesianGrid strokeDasharray="3 3" stroke="hsl(214, 32%, 91%)" />
               <XAxis dataKey="age" tick={{ fontSize: 12 }} stroke="hsl(215, 16%, 47%)" />
               <YAxis tick={{ fontSize: 12 }} stroke="hsl(215, 16%, 47%)" />

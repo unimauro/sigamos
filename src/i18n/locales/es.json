@@ -164,6 +164,8 @@
   "helplines": {
     "title": "Directorio de L\u00edneas de Ayuda",
     "subtitle": "Hay ayuda disponible en tu pa\u00eds. No est\u00e1s solo/a.",
+    "lastReviewed": "Directorio revisado: {{date}}",
+    "reportBroken": "\u00bfUn n\u00famero no funciona? Av\u00edsanos para corregirlo.",
     "searchPlaceholder": "Buscar por pa\u00eds u organizaci\u00f3n...",
     "all": "Todos",
     "available": "Disponible",
@@ -214,6 +216,12 @@
     "messageShort": "\u00bfNecesitas ayuda?",
     "call988": "Llamar 988",
     "findHelpline": "Buscar l\u00ednea de ayuda"
+  },
+  "privacy": {
+    "title": "Tu privacidad importa",
+    "text": "Este sitio no guarda tus conversaciones. Usamos anal\u00edtica an\u00f3nima (sin cookies de rastreo) y detectamos tu pa\u00eds por IP solo para mostrarte la l\u00ednea de ayuda local.",
+    "ack": "Entendido",
+    "learnMore": "M\u00e1s informaci\u00f3n"
   },
   "footer": {
     "crisisMessage": "Si t\u00fa o alguien que conoces est\u00e1 en crisis, por favor busca ayuda. Hay asistencia disponible las 24 horas.",

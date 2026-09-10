@@ -12,6 +12,7 @@ import DashboardFooter from "@/components/DashboardFooter";
 import EmergencyBar from "@/components/EmergencyBar";
 import CoffeeButton from "@/components/CoffeeButton";
 import SupportChat from "@/components/SupportChat";
+import PrivacyNotice from "@/components/PrivacyNotice";
 
 const Index = () => {
   return (
@@ -30,6 +31,7 @@ const Index = () => {
       <EmergencyBar />
       <CoffeeButton />
       <SupportChat />
+      <PrivacyNotice />
     </div>
   );
 };

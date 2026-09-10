@@ -104,7 +104,7 @@ const GenderAnalysis = () => {
           >
             <h3 className="text-lg font-semibold mb-6">{t('gender.ratesByRegion')}</h3>
             <ResponsiveContainer width="100%" height={300}>
-              <BarChart data={regionData} barGap={2}>
+              <BarChart data={regionData} barGap={2} accessibilityLayer>
                 <XAxis dataKey="region" tick={{ fontSize: 12 }} stroke="hsl(215, 16%, 47%)" />
                 <YAxis tick={{ fontSize: 12 }} stroke="hsl(215, 16%, 47%)" />
                 <Tooltip content={<CustomTooltip />} />
@@ -129,7 +129,7 @@ const GenderAnalysis = () => {
           >
             <h3 className="text-lg font-semibold mb-6">{t('gender.historicalTrend')}</h3>
             <ResponsiveContainer width="100%" height={300}>
-              <LineChart data={trendData}>
+              <LineChart data={trendData} accessibilityLayer>
                 <XAxis dataKey="year" tick={{ fontSize: 12 }} stroke="hsl(215, 16%, 47%)" />
                 <YAxis tick={{ fontSize: 12 }} stroke="hsl(215, 16%, 47%)" />
                 <Tooltip content={<CustomTooltip />} />

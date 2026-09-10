@@ -164,6 +164,8 @@
   "helplines": {
     "title": "Helpline Directory",
     "subtitle": "Help is available in your country. You are not alone.",
+    "lastReviewed": "Directory reviewed: {{date}}",
+    "reportBroken": "A number not working? Let us know so we can fix it.",
     "searchPlaceholder": "Search by country or organization...",
     "all": "All",
     "available": "Available",
@@ -214,6 +216,12 @@
     "messageShort": "Need help now?",
     "call988": "Call 988",
     "findHelpline": "Find a helpline"
+  },
+  "privacy": {
+    "title": "Your privacy matters",
+    "text": "This site does not store your conversations. We use anonymous analytics (no tracking cookies) and detect your country by IP only to show you the local helpline.",
+    "ack": "Got it",
+    "learnMore": "Learn more"
   },
   "footer": {
     "crisisMessage": "If you or someone you know is in crisis, please reach out. Help is available 24/7.",

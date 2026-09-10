@@ -127,7 +127,7 @@ const EconomicFactors = () => {
           >
             <h3 className="text-lg font-semibold mb-6">{t('economic.gdpVsRate')}</h3>
             <ResponsiveContainer width="100%" height={320}>
-              <ScatterChart margin={{ top: 24, right: 16, bottom: 8, left: 0 }}>
+              <ScatterChart margin={{ top: 24, right: 16, bottom: 8, left: 0 }} accessibilityLayer>
                 <CartesianGrid strokeDasharray="3 3" stroke="hsl(214, 32%, 91%)" />
                 <XAxis
                   type="number"
@@ -159,7 +159,7 @@ const EconomicFactors = () => {
           >
             <h3 className="text-lg font-semibold mb-6">{t('economic.unemploymentVsRate')}</h3>
             <ResponsiveContainer width="100%" height={300}>
-              <LineChart data={crisisData}>
+              <LineChart data={crisisData} accessibilityLayer>
                 <CartesianGrid strokeDasharray="3 3" stroke="hsl(214, 32%, 91%)" />
                 <XAxis dataKey="year" tick={{ fontSize: 11 }} stroke="hsl(215, 16%, 47%)" />
                 <YAxis yAxisId="left" tick={{ fontSize: 11 }} stroke="hsl(215, 16%, 47%)" />
@@ -182,7 +182,7 @@ const EconomicFactors = () => {
           >
             <h3 className="text-lg font-semibold mb-6">{t('economic.ratesByIncome')}</h3>
             <ResponsiveContainer width="100%" height={250}>
-              <BarChart data={incomeData}>
+              <BarChart data={incomeData} accessibilityLayer>
                 <CartesianGrid strokeDasharray="3 3" stroke="hsl(214, 32%, 91%)" />
                 <XAxis dataKey="group" tick={{ fontSize: 12 }} stroke="hsl(215, 16%, 47%)" />
                 <YAxis tick={{ fontSize: 12 }} stroke="hsl(215, 16%, 47%)" />
