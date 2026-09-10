@@ -119,6 +119,17 @@ const HeroSection = () => {
           </Button>
         </motion.div>
 
+        <motion.button
+          type="button"
+          onClick={() => window.dispatchEvent(new Event('open-support-chat'))}
+          className="text-sm text-primary/80 underline underline-offset-4 hover:text-primary transition-colors"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.7 }}
+        >
+          {t('hero.talkFirst')}
+        </motion.button>
+
         <motion.p
           className="text-sm text-muted-foreground pt-2"
           initial={{ opacity: 0 }}

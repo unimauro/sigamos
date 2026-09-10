@@ -10,6 +10,7 @@ import PreventionResources from "@/components/PreventionResources";
 import DashboardFooter from "@/components/DashboardFooter";
 import EmergencyBar from "@/components/EmergencyBar";
 import CoffeeButton from "@/components/CoffeeButton";
+import SupportChat from "@/components/SupportChat";
 
 const Index = () => {
   return (
@@ -26,6 +27,7 @@ const Index = () => {
       <DashboardFooter />
       <EmergencyBar />
       <CoffeeButton />
+      <SupportChat />
     </div>
   );
 };

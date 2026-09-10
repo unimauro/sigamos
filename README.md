@@ -1,73 +1,73 @@
-# Welcome to your Lovable project
+# Life Compass — Estamos contigo 🧭
 
-## Project info
+Dashboard web de **concientización y prevención del suicidio**: estadísticas globales,
+directorio de líneas de ayuda por país y recursos de prevención. Cada vida es una
+historia que vale la pena continuar.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+**En vivo:** https://unimauro.github.io/life-compass/
 
-## How can I edit this code?
+## Qué incluye
 
-There are several ways of editing your application.
+- **Panorama con datos** — cifras globales, análisis por género, edad, factores
+  económicos e impacto de las redes sociales (gráficos con Recharts).
+- **Directorio de líneas de ayuda** — con detección automática del país del visitante
+  para mostrar la línea local (`useCountryHelpline`).
+- **Recursos de prevención** — señales de alerta, cómo ayudar y qué decir / qué no.
+- **Chat de acompañamiento** — un asistente cálido cuyo objetivo es animar a la persona
+  a **hablar de lo que le pasa con alguien real, de preferencia en persona**, y a
+  contactar una línea de ayuda. Ver detalle abajo.
+- **Multi-idioma** (8 idiomas) y lectura en voz alta del mensaje principal.
 
-**Use Lovable**
+## Chat de acompañamiento
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Componente: `src/components/SupportChat.tsx` · motor: `src/lib/support-chat.ts`.
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Seguro por defecto y sin backend.** Funciona 100% en modo guiado sobre GitHub Pages.
+  Todo el texto vive en i18n (`chat.*`).
+- **Detección de crisis determinista** (ES + EN): ante señales de riesgo muestra de
+  inmediato la línea de ayuda del país del visitante. Ofrecer ayuda nunca hace daño;
+  ante la duda, escala.
+- **Enfoque:** no reemplaza a un profesional ni a una persona; es un *puente* que ayuda
+  a dar el paso de conversar cara a cara con alguien de confianza.
 
-**Use your preferred IDE**
+### Capa de IA opcional (gateway ai.tunky.net)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Desactivada salvo que definas variables de entorno de build. Sin ellas, el chat sigue
+completo en modo guiado.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```bash
+# .env.local (NO commitear)
+VITE_TUNKY_TOKEN=<token del gateway — pedir a Carlos>
+VITE_TUNKY_GATEWAY=https://ai.tunky.net/v1/chat   # opcional, este es el valor por defecto
 ```
 
-**Edit a file directly in GitHub**
+El gateway protege el token con allowlist de Origin (incluye `unimauro.github.io`).
+El `systemPrompt` está en `chat.systemPrompt` (es/en) y restringe al modelo a acompañar
+y derivar hacia ayuda humana real. Aun con IA activa, la detección de crisis se ejecuta
+sobre el mensaje del usuario **y** sobre la respuesta del modelo.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Desarrollo
 
-**Use GitHub Codespaces**
+```bash
+npm ci
+npm run dev      # http://localhost:8080/life-compass/
+npm run build    # genera dist/
+npm run test     # vitest
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Deploy
 
-## What technologies are used for this project?
+Push a `main` dispara el workflow `.github/workflows/deploy.yml`, que construye y publica
+en **GitHub Pages** (`base: /life-compass/`).
 
-This project is built with:
+## Stack
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Vite · React · TypeScript · Tailwind · shadcn-ui · Recharts · react-i18next · framer-motion.
 
-## How can I deploy this project?
+## Datos
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Fuentes en `public/data/` (OMS y otras). Regla del proyecto: no inventar cifras.
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Proyecto de **Carlos Mauro Cárdenas** ([@unimauro](https://github.com/unimauro)).

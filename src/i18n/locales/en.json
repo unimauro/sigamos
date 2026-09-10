@@ -6,6 +6,7 @@
     "subtitle": "Behind the pain there is a person, a family, a story. We are here to walk with you. There is always another way.",
     "callCrisis": "Talk to someone now",
     "findHelp": "Find help near you",
+    "talkFirst": "Prefer to start by writing? Talk here first",
     "crisisMessage": "If you or someone you know is going through a difficult time, there are people who want to listen. Call, write, don't stay silent.",
     "listenMessage": "Listen to us",
     "stopListening": "Stop",
@@ -234,5 +235,50 @@
     "learnMore": "Learn More",
     "callNow": "Call Now",
     "search": "Search..."
+  },
+  "chat": {
+    "fabLabel": "Talk",
+    "title": "A space to talk",
+    "headerSub": "You are not alone in this",
+    "inputPlaceholder": "Write what you feel...",
+    "send": "Send",
+    "close": "Close",
+    "needHelpNow": "I need help now",
+    "disclaimer": "This chat does not store your messages and is not a substitute for professional care.",
+    "systemPrompt": "You are a warm companion for Life Compass, a suicide-prevention website. You are NOT a therapist and you do not replace a real person. Your only goal is to accompany with warmth and encourage the person writing to take one concrete step: to talk about what they are going through with a real human being —a friend, family member, teacher or professional—, preferably in person, and to reach a helpline. Reply in the user's language, in 2 to 4 sentences, without judging, without minimizing, and without giving clinical advice or any information about methods of harm. Validate how they feel and guide them toward a real human conversation. If you detect any sign of risk to their life, prioritize that they immediately call their country's helpline and emergency services.",
+    "nodes": {
+      "greeting": "Hi, I'm really glad you opened this. This is a calm space: I'm in no rush and I won't judge you. What's weighing on you the most these days?",
+      "lonely": "Loneliness tires you in a way many people don't see. Feeling this way doesn't mean you're failing at anything. Thank you for telling me.",
+      "sad": "Carrying that sadness almost every day is exhausting. It makes complete sense that you're tired. What you're feeling matters to me.",
+      "anxious": "When the mind won't stop, the body can't rest either. You're holding more than it shows. Breathe with me for a second: inhale slowly… and let go.",
+      "other": "Caring about someone else says a lot about you. Being there for someone is heavy too, and you don't have to do it alone. Would you like to see how to start that conversation with them?",
+      "howToHelp": "The most valuable thing you can do is be present and listen without rushing to fix anything. Ask directly and kindly, stay close, and help them connect with someone who can support them. The Prevention section of this page has a guide on what to say and what not to say.",
+      "bridge": "Saying this out loud, to someone who looks you in the eyes, changes things more than we imagine. It doesn't have to be perfect or solve everything at once. Is there someone —a friend, a relative, a teacher, a neighbor, anyone— you could sit down and talk with, even for a little while?",
+      "yesSomeone": "That's already huge. You don't need to tell them everything at once; just opening the door is enough. Invite them to something simple: a coffee, a walk, sitting together for a bit. Being face to face helps the words come out.",
+      "noOne": "The fact that you can't find that person right now doesn't mean they don't exist or won't appear. And in the meantime, there are people ready to listen to you today, free and in confidence. Talking to them counts too, and it's often the bridge back to getting closer to others.",
+      "openingLines": "Sometimes the hard part is just starting. You can say something as simple as: \"I've been having a really hard time lately and I need to tell someone, do you have a moment?\" or \"I'm not okay and I don't want to be alone right now, can we meet?\". You don't have to explain everything; taking the first step is enough.",
+      "closing": "I'm really glad we talked. Take that step whenever you can, no rush, but give yourself the chance. Your story continues, and you don't have to walk it alone. This page will be here whenever you need it.",
+      "fallback": "Thank you for writing it; being read matters. I won't always have the perfect answer, but I can walk with you toward one step: telling this to a real person. Shall we look together at how to start that conversation?"
+    },
+    "options": {
+      "lonely": "I feel very alone",
+      "sad": "I'm sad almost all the time",
+      "anxious": "I have a lot of anxiety or stress",
+      "other": "I'm worried about someone else",
+      "justTalk": "I just want to talk",
+      "continue": "Continue",
+      "howHelp": "How do I help them?",
+      "openHelpSection": "See prevention guide",
+      "yesSomeone": "Yes, there is someone",
+      "noOne": "I have no one right now",
+      "howStart": "How do I start?",
+      "helplineNow": "Talk to someone now",
+      "done": "Thank you",
+      "restart": "Start over"
+    },
+    "crisis": {
+      "message": "What you're sharing matters, and you shouldn't carry it alone. Right now there are people ready to listen to you, free and in confidence. Please, take this step:",
+      "stay": "If you feel you are in immediate danger, also call your country's emergency number."
+    }
   }
 }

@@ -6,6 +6,7 @@
     "subtitle": "Detrás del dolor hay una persona, una familia, una historia. Estamos aquí para acompañarte. Siempre hay otra salida.",
     "callCrisis": "Habla con alguien ahora",
     "findHelp": "Busca ayuda cerca de ti",
+    "talkFirst": "¿Prefieres empezar escribiendo? Conversa aquí primero",
     "crisisMessage": "Si tú o alguien que conoces está pasando por un momento difícil, hay personas que quieren escucharte. Llama, escribe, no te quedes en silencio.",
     "listenMessage": "Escúchanos",
     "stopListening": "Detener",
@@ -234,5 +235,50 @@
     "learnMore": "Saber M\u00e1s",
     "callNow": "Llamar Ahora",
     "search": "Buscar..."
+  },
+  "chat": {
+    "fabLabel": "Hablar",
+    "title": "Un espacio para hablar",
+    "headerSub": "No est\u00e1s solo/a en esto",
+    "inputPlaceholder": "Escribe lo que sientes...",
+    "send": "Enviar",
+    "close": "Cerrar",
+    "needHelpNow": "Necesito ayuda ahora",
+    "disclaimer": "Este chat no guarda tus mensajes y no reemplaza la atenci\u00f3n de un profesional.",
+    "systemPrompt": "Eres un acompa\u00f1ante c\u00e1lido de Life Compass, una web de prevenci\u00f3n del suicidio. NO eres terapeuta ni reemplazas a una persona real. Tu \u00fanico objetivo es acompa\u00f1ar con calidez y animar a quien escribe a dar un paso concreto: hablar de lo que le pasa con una persona de carne y hueso \u2014un amigo, familiar, docente o profesional\u2014, de preferencia en persona, y a contactar una l\u00ednea de ayuda. Responde en el idioma del usuario, en 2 a 4 frases, sin juzgar, sin minimizar y sin dar consejos cl\u00ednicos ni informaci\u00f3n sobre m\u00e9todos de da\u00f1o. Valida lo que siente y gu\u00eda hacia una conversaci\u00f3n humana real. Si detectas cualquier se\u00f1al de riesgo para su vida, prioriza que llame de inmediato a la l\u00ednea de ayuda de su pa\u00eds y a emergencias.",
+    "nodes": {
+      "greeting": "Hola, qu\u00e9 bueno que te animaste a abrir esto. Este es un espacio tranquilo: no tengo prisa y no te voy a juzgar. \u00bfQu\u00e9 es lo que m\u00e1s te est\u00e1 pesando en estos d\u00edas?",
+      "lonely": "La soledad cansa de una forma que muchos no ven. Sentirte as\u00ed no significa que est\u00e9s fallando en nada. Gracias por cont\u00e1rmelo.",
+      "sad": "Llevar esa tristeza casi todos los d\u00edas agota much\u00edsimo. Tiene todo el sentido que est\u00e9s cansado/a. Me importa lo que est\u00e1s sintiendo.",
+      "anxious": "Cuando la mente no para, el cuerpo tampoco descansa. Est\u00e1s aguantando m\u00e1s de lo que se nota. Respira conmigo un segundo: inhala despacio\u2026 y suelta.",
+      "other": "Que te preocupes por otra persona dice mucho de ti. Acompa\u00f1ar tambi\u00e9n pesa, y no tienes que hacerlo solo/a. \u00bfQuieres ver c\u00f3mo iniciar esa conversaci\u00f3n con ella?",
+      "howToHelp": "Lo m\u00e1s valioso que puedes hacer es estar y escuchar sin apurarte a arreglar nada. Pregunta directo y con cari\u00f1o, qu\u00e9date cerca, y ay\u00fadale a conectar con alguien que pueda sostenerlo. En la secci\u00f3n de Prevenci\u00f3n de esta p\u00e1gina tienes una gu\u00eda de qu\u00e9 decir y qu\u00e9 no.",
+      "bridge": "Hablar de esto en voz alta, con alguien que te mire a los ojos, cambia las cosas m\u00e1s de lo que imaginamos. No tiene que ser perfecto ni resolverlo todo de una vez. \u00bfHay alguien \u2014un amigo, un familiar, un profe, un vecino, quien sea\u2014 con quien podr\u00edas sentarte a hablar, aunque sea un rato?",
+      "yesSomeone": "Eso ya es enorme. No necesitas contarle todo de golpe; basta con abrir la puerta. Inv\u00edtale a algo sencillo: un caf\u00e9, una caminata, sentarse un rato. Estar frente a frente ayuda a que las palabras salgan.",
+      "noOne": "Que ahora mismo no encuentres a esa persona no significa que no exista o que no vaya a aparecer. Y mientras tanto, hay gente preparada para escucharte hoy, gratis y en confianza. Hablar con ellos tambi\u00e9n cuenta, y muchas veces es el puente para volver a acercarte a los dem\u00e1s.",
+      "openingLines": "A veces lo dif\u00edcil es solo empezar. Puedes decir algo tan simple como: \u00ab\u00daltimamente la estoy pasando mal y necesito contarle a alguien, \u00bftienes un rato?\u00bb o \u00abNo estoy bien y no quiero estar solo/a ahora, \u00bfpodemos vernos?\u00bb. No tienes que explicarlo todo; basta con dar el primer paso.",
+      "closing": "Me alegra mucho haber hablado contigo. Da ese paso cuando puedas, sin prisa, pero date la oportunidad. Tu historia sigue, y no tienes que caminarla en soledad. Esta p\u00e1gina estar\u00e1 aqu\u00ed cuando la necesites.",
+      "fallback": "Gracias por escribirlo; leerte importa. No siempre tendr\u00e9 la respuesta perfecta, pero s\u00ed puedo acompa\u00f1arte a dar un paso: contarle esto a una persona de verdad. \u00bfVemos juntos c\u00f3mo empezar esa conversaci\u00f3n?"
+    },
+    "options": {
+      "lonely": "Me siento muy solo/a",
+      "sad": "Estoy triste casi siempre",
+      "anxious": "Tengo mucha ansiedad o estr\u00e9s",
+      "other": "Me preocupa otra persona",
+      "justTalk": "Solo quiero hablar",
+      "continue": "Seguir",
+      "howHelp": "\u00bfC\u00f3mo la ayudo?",
+      "openHelpSection": "Ver gu\u00eda de prevenci\u00f3n",
+      "yesSomeone": "S\u00ed, hay alguien",
+      "noOne": "Ahora no tengo a nadie",
+      "howStart": "\u00bfC\u00f3mo empiezo?",
+      "helplineNow": "Hablar con alguien ahora",
+      "done": "Gracias",
+      "restart": "Empezar de nuevo"
+    },
+    "crisis": {
+      "message": "Lo que me compartes importa, y no deber\u00edas sostenerlo solo/a. Ahora mismo hay personas preparadas para escucharte, gratis y en confianza. Por favor, da este paso:",
+      "stay": "Si sientes que est\u00e1s en peligro inmediato, llama tambi\u00e9n al n\u00famero de emergencias de tu pa\u00eds."
+    }
   }
 }
