@@ -17,7 +17,13 @@ Ya entregado en esta iteración:
 - **H3.1 — Detección de crisis en los 8 idiomas** (+ tests multilingües).
 - Extras: GA4 con `anonymize_ip`, SEO (canonical/sitemap/JSON-LD), `npm audit` 25→6, WhatsApp roto de Perú retirado, banderas y pulido en gráficos.
 
-Pendientes prioritarios: **H2.2** (metadato `last_verified`/`status` por línea), **H1.1** (conectar los CSV al runtime), accesibilidad de gráficos (alt textual), consentimiento de analítica/ipapi.
+Segunda tanda ("vamos con todo"):
+- **Accesibilidad de gráficos**: `accessibilityLayer` (teclado + ARIA) en todos los cartesianos + `role="img"` en el pie.
+- **Privacidad**: aviso `PrivacyNotice` (sin cookies de rastreo; IP solo para línea local), recordado en localStorage.
+- **H2.2 (parcial)**: fecha de revisión del directorio (`HELPLINES_LAST_REVIEWED`) + aviso para reportar números rotos.
+- **H1.1 (primer paso)**: top-15 países conectado al CSV real (OMS 2019) vía `src/lib/csv.ts` + `src/lib/geo.ts`, con fallback.
+
+Pendientes: **H1.1** (conectar el resto de CSV con caveats de "ilustrativo"), **H2.2** (estado `verified` POR línea), tabla de datos alternativa para lectores de pantalla, y gating de GA por consentimiento (hoy solo aviso).
 
 ---
 
