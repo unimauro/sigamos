@@ -166,6 +166,7 @@
     "subtitle": "Hay ayuda disponible en tu pa\u00eds. No est\u00e1s solo/a.",
     "lastReviewed": "Directorio revisado: {{date}}",
     "reportBroken": "\u00bfUn n\u00famero no funciona? Av\u00edsanos para corregirlo.",
+    "verified": "Verificada",
     "searchPlaceholder": "Buscar por pa\u00eds u organizaci\u00f3n...",
     "all": "Todos",
     "available": "Disponible",
@@ -221,7 +222,18 @@
     "title": "Tu privacidad importa",
     "text": "Este sitio no guarda tus conversaciones. Usamos anal\u00edtica an\u00f3nima (sin cookies de rastreo) y detectamos tu pa\u00eds por IP solo para mostrarte la l\u00ednea de ayuda local.",
     "ack": "Entendido",
+    "decline": "Rechazar anal\u00edtica",
     "learnMore": "M\u00e1s informaci\u00f3n"
+  },
+  "a11y": {
+    "year": "A\u00f1o",
+    "country": "Pa\u00eds",
+    "group": "Grupo",
+    "ageRange": "Edad",
+    "region": "Regi\u00f3n",
+    "screenTime": "Horas/d\u00eda",
+    "unemployment": "Desempleo %",
+    "gdpCapita": "PIB per c\u00e1pita"
   },
   "footer": {
     "crisisMessage": "Si t\u00fa o alguien que conoces est\u00e1 en crisis, por favor busca ayuda. Hay asistencia disponible las 24 horas.",

@@ -37,6 +37,12 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+      // Respeta el opt-out de analítica (aviso de privacidad) antes de medir.
+      try {
+        if (localStorage.getItem('sigamos_ga_optout') === '1') {
+          window['ga-disable-G-2PEP1EE6FE'] = true;
+        }
+      } catch (e) { /* no-op */ }
       gtag('config', 'G-2PEP1EE6FE', { anonymize_ip: true });
     </script>
 

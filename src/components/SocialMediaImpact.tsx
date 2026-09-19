@@ -4,6 +4,7 @@ import { ShieldAlert, ShieldCheck, Phone } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useCountryHelpline } from "@/hooks/use-country-helpline";
 import ChartSource from "./ChartSource";
+import ChartDataTable from "./ChartDataTable";
 
 const usageData = [
   { age: "13\u201317", hours: 4.8, ideation: 18 },
@@ -104,6 +105,11 @@ const SocialMediaImpact = () => {
             </BarChart>
           </ResponsiveContainer>
           <ChartSource sources={["twenge2018"]} illustrative note={t('sources.noteExample')} />
+          <ChartDataTable
+            caption={t('social.chartTitle')}
+            columns={[t('a11y.ageRange'), t('social.avgHours'), t('social.ideationRate')]}
+            rows={usageData.map((d) => [d.age, d.hours, `${d.ideation}%`])}
+          />
         </motion.div>
 
         {/* Dual perspective */}

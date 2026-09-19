@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, LineChart, Line, LabelList } from "recharts";
 import { useTranslation } from "react-i18next";
 import ChartSource from "./ChartSource";
+import ChartDataTable from "./ChartDataTable";
 
 const COLORS = {
   male: "hsl(217, 91%, 65%)",
@@ -118,6 +119,11 @@ const GenderAnalysis = () => {
               </BarChart>
             </ResponsiveContainer>
             <ChartSource sources={["who2021"]} illustrative note={t('sources.noteRegional')} />
+            <ChartDataTable
+              caption={t('gender.ratesByRegion')}
+              columns={[t('a11y.region'), t('gender.male'), t('gender.female')]}
+              rows={regionData.map((d) => [d.region, d.male, d.female])}
+            />
           </motion.div>
 
           {/* Line Chart: Historical Trend */}
@@ -139,6 +145,11 @@ const GenderAnalysis = () => {
               </LineChart>
             </ResponsiveContainer>
             <ChartSource sources={["who2021", "owid"]} illustrative note={t('sources.noteEstimate')} />
+            <ChartDataTable
+              caption={t('gender.historicalTrend')}
+              columns={[t('a11y.year'), t('gender.male'), t('gender.female')]}
+              rows={trendData.map((d) => [d.year, d.male, d.female])}
+            />
           </motion.div>
         </div>
 

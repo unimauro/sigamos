@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, LineChart, Line, Legend, ScatterChart, Scatter, ZAxis, CartesianGrid, LabelList } from "recharts";
 import { useTranslation } from "react-i18next";
 import ChartSource from "./ChartSource";
+import ChartDataTable from "./ChartDataTable";
 
 const crisisData = [
   { year: "2005", unemployment: 5.1, suicideRate: 11.2 },
@@ -148,6 +149,11 @@ const EconomicFactors = () => {
               </ScatterChart>
             </ResponsiveContainer>
             <ChartSource sources={["worldBank", "who2021"]} illustrative note={t('sources.noteExample')} />
+            <ChartDataTable
+              caption={t('economic.gdpVsRate')}
+              columns={[t('a11y.country'), t('a11y.gdpCapita'), t('economic.ratePer100k')]}
+              rows={scatterData.map((d) => [`${d.flag} ${d.country}`, `$${d.gdp.toLocaleString()}`, d.rate])}
+            />
           </motion.div>
 
           {/* Line: Unemployment vs Suicide */}
@@ -171,6 +177,11 @@ const EconomicFactors = () => {
               </LineChart>
             </ResponsiveContainer>
             <ChartSource sources={["worldBank", "unemployment2013"]} illustrative note={t('sources.noteExample')} />
+            <ChartDataTable
+              caption={t('economic.unemploymentVsRate')}
+              columns={[t('a11y.year'), t('a11y.unemployment'), t('economic.suicideRate')]}
+              rows={crisisData.map((d) => [d.year, d.unemployment, d.suicideRate])}
+            />
           </motion.div>
 
           {/* Bar: By Income Level */}
@@ -193,6 +204,11 @@ const EconomicFactors = () => {
               </BarChart>
             </ResponsiveContainer>
             <ChartSource sources={["whoFactsheet"]} illustrative note={t('sources.noteExample')} />
+            <ChartDataTable
+              caption={t('economic.ratesByIncome')}
+              columns={[t('a11y.group'), t('economic.ratePer100k')]}
+              rows={incomeData.map((d) => [d.group, d.rate])}
+            />
           </motion.div>
         </div>
       </div>

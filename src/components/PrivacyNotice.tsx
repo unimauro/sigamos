@@ -30,6 +30,16 @@ const PrivacyNotice = () => {
     setVisible(false);
   };
 
+  const decline = () => {
+    try {
+      localStorage.setItem("sigamos_ga_optout", "1");
+      (window as unknown as Record<string, boolean>)["ga-disable-G-2PEP1EE6FE"] = true;
+    } catch {
+      /* no-op */
+    }
+    dismiss();
+  };
+
   return (
     <AnimatePresence>
       {visible && (
@@ -54,6 +64,13 @@ const PrivacyNotice = () => {
                   className="rounded-full bg-primary text-primary-foreground text-xs font-semibold px-4 py-1.5 hover:bg-primary/90 transition-colors"
                 >
                   {t("privacy.ack")}
+                </button>
+                <button
+                  type="button"
+                  onClick={decline}
+                  className="text-xs text-muted-foreground underline underline-offset-2 hover:text-foreground"
+                >
+                  {t("privacy.decline")}
                 </button>
                 <a
                   href="#fuentes"

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, Search } from "lucide-react";
+import { Phone, Search, BadgeCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 import { HELPLINES as helplines, HELPLINES_LAST_REVIEWED } from "@/data/helplines";
@@ -106,6 +106,12 @@ const HelplineDirectory = () => {
                   </div>
                 </div>
                 <p className="text-sm text-muted-foreground mb-1">{t('helplines.available')}: {h.hours}</p>
+                {h.verified && (
+                  <span className="inline-flex items-center gap-1 text-[11px] font-medium text-primary">
+                    <BadgeCheck className="w-3.5 h-3.5" />
+                    {t('helplines.verified')}
+                  </span>
+                )}
               </div>
               <div className="mt-4 flex flex-col gap-2">
                 <Button variant="emergency" size="sm" asChild className="w-full">

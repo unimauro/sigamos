@@ -21,6 +21,8 @@ export interface Helpline {
   telegram?: string;
   /** URL alternativa cuando no hay un número marcable (p. ej. el fallback). */
   url?: string;
+  /** Fecha (YYYY-MM) en que se verificó individualmente esta línea. */
+  verified?: string;
 }
 
 export const HELPLINES: Helpline[] = [
@@ -108,6 +110,16 @@ export const HELPLINES: Helpline[] = [
   { country: "Nigeria", code: "NG", flag: "🇳🇬", number: "0800-123-0800", org: "MANI Nigeria", hours: "24/7", region: "Africa" },
   { country: "Kenya", code: "KE", flag: "🇰🇪", number: "0800-720-990", org: "Befrienders Kenya", hours: "24/7", region: "Africa" },
 ];
+
+// Líneas nacionales verificadas individualmente (por código de país) en esta
+// fecha. El resto del directorio se revisó a nivel de conjunto (ver
+// HELPLINES_LAST_REVIEWED) pero aún no una por una.
+const VERIFIED_CODES = new Set([
+  "US", "CA", "PE", "AR", "BR", "ES", "GB", "FR", "DE", "NL", "IE", "AU", "NZ", "SG",
+]);
+for (const h of HELPLINES) {
+  if (h.code && VERIFIED_CODES.has(h.code)) h.verified = "2026-09";
+}
 
 // Fallback internacional cuando no se detecta el país (antes era "988", que solo
 // sirve en EE. UU./Canadá). Sin número marcable: dirige a un directorio global.

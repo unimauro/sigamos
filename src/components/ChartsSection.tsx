@@ -6,6 +6,7 @@ import {
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import ChartSource from "./ChartSource";
+import ChartDataTable from "./ChartDataTable";
 import { useCsv } from "@/lib/csv";
 import { flagFromIso3 } from "@/lib/geo";
 
@@ -123,6 +124,11 @@ const ChartsSection = () => {
               </AreaChart>
             </ResponsiveContainer>
             <ChartSource sources={["owid", "who2021"]} note={t('sources.noteAgeStd')} />
+            <ChartDataTable
+              caption={t('charts.globalTrend')}
+              columns={[t('a11y.year'), t('charts.ratePer100k')]}
+              rows={globalTrend.map((d) => [d.year, d.rate])}
+            />
           </motion.div>
 
           {/* Age Distribution */}
@@ -160,6 +166,11 @@ const ChartsSection = () => {
               </PieChart>
             </ResponsiveContainer>
             <ChartSource sources={["gbd2021"]} illustrative note={t('sources.noteExample')} />
+            <ChartDataTable
+              caption={t('charts.distributionByAge')}
+              columns={[t('a11y.ageRange'), "%"]}
+              rows={ageDistribution.map((d) => [d.name, `${d.value}%`])}
+            />
           </motion.div>
 
           {/* Top Countries */}
@@ -185,6 +196,11 @@ const ChartsSection = () => {
               </BarChart>
             </ResponsiveContainer>
             <ChartSource sources={["who2021", "owid"]} note={t('sources.noteCrude2019')} />
+            <ChartDataTable
+              caption={t('charts.top15Countries')}
+              columns={[t('a11y.country'), t('charts.ratePer100k')]}
+              rows={topCountries.map((d) => [d.country, d.rate])}
+            />
           </motion.div>
         </div>
       </div>
