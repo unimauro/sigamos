@@ -28,7 +28,10 @@ Tercera tanda (2026-09-19):
 - **Opt-out de GA** en el aviso de privacidad (respeta `ga-disable` en visitas futuras).
 - **H2.2**: badge "Verificada" POR línea para 14 líneas nacionales (2026-09).
 
-Pendientes (menor prioridad): conectar el resto de CSV (siguen etiquetados "ilustrativo" por ser series sintéticas), verificación individual del resto de líneas, code-splitting del bundle, y más contenido de prevención.
+Cuarta tanda (2026-09-19):
+- **Rendimiento / code-splitting**: `manualChunks` (react/recharts/motion/i18n) + `React.lazy` en las secciones analíticas. Entry de ~1.05 MB → 265 kB; Recharts (433 kB) en diferido. Crisis surfaces siguen eager.
+
+Pendientes (menor prioridad): conectar el resto de CSV (siguen "ilustrativo" por ser series sintéticas), verificación individual del resto de líneas, y más contenido de prevención.
 
 ---
 
