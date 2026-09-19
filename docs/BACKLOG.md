@@ -23,7 +23,12 @@ Segunda tanda ("vamos con todo"):
 - **H2.2 (parcial)**: fecha de revisión del directorio (`HELPLINES_LAST_REVIEWED`) + aviso para reportar números rotos.
 - **H1.1 (primer paso)**: top-15 países conectado al CSV real (OMS 2019) vía `src/lib/csv.ts` + `src/lib/geo.ts`, con fallback.
 
-Pendientes: **H1.1** (conectar el resto de CSV con caveats de "ilustrativo"), **H2.2** (estado `verified` POR línea), tabla de datos alternativa para lectores de pantalla, y gating de GA por consentimiento (hoy solo aviso).
+Tercera tanda (2026-09-19):
+- **Tablas de datos accesibles** (`ChartDataTable`, sr-only) bajo TODOS los gráficos → lectores de pantalla acceden a las cifras.
+- **Opt-out de GA** en el aviso de privacidad (respeta `ga-disable` en visitas futuras).
+- **H2.2**: badge "Verificada" POR línea para 14 líneas nacionales (2026-09).
+
+Pendientes (menor prioridad): conectar el resto de CSV (siguen etiquetados "ilustrativo" por ser series sintéticas), verificación individual del resto de líneas, code-splitting del bundle, y más contenido de prevención.
 
 ---
 
